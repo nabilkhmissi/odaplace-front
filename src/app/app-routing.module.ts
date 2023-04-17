@@ -9,6 +9,7 @@ import { HeadphonesComponent } from "./headphones/headphones.component";
 import { HeadphonesDetailsComponent } from "./headphones-details/headphones-details.component";
 import { SignupComponent } from "./signup/signup.component";
 import { LoginComponent } from "./login/login.component";
+import { ProductResolver } from "./resolvers/product.resolver";
 
 const routes: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -16,7 +17,7 @@ const routes: Routes = [
     { path: 'products/smartphones', component: ProductsComponent },
     { path: 'products/headphones', component: HeadphonesComponent },
     { path: 'cart-items', component: CartItemsComponent },
-    { path: 'products/:id', component: ProductDetailsComponent },
+    { path: 'products/:id', component: ProductDetailsComponent, resolve: { product: ProductResolver } },
     { path: 'headphones/:id', component: HeadphonesDetailsComponent },
     { path: 'bookmarks', component: BookmarksComponent },
     { path: 'signup', component: SignupComponent },

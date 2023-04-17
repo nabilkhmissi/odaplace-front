@@ -34,19 +34,15 @@
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
+    cursor: pointer;
 }
 
 .button i {
     padding: 15px;
     background-color: orangered;
-    opacity: .5;
     color: white;
     font-size: 25px;
     border-radius: 50px;
-}
-
-.button:hover i {
-    opacity: 1;
 }
 
 .bookmark-card {

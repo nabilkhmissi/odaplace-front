@@ -1,8 +1,9 @@
 .products-section {
-    padding: 20px 10px;
+    padding: 20px 5%;
     background-color: rgb(255, 255, 255);
     display: flex;
     gap: 10px;
+    min-height: 100vh;
 }
 
 .product-card {
@@ -11,7 +12,6 @@
 }
 
 .products-grid {
-    /*  padding: 0 20px; */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, auto));
     grid-gap: 1.5rem;

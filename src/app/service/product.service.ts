@@ -15,7 +15,7 @@ export class ProductService {
     constructor(private http: HttpClient,
         private loadingService: LoadingService) { }
 
-    private baseUrl = environment.baseUrl;
+    private baseUrl = 'https://odaplace.onrender.com/api';
 
     private searchByManufacturersSubject = new BehaviorSubject<string | null>(null);
     searchByManufacturersSubject$ = this.searchByManufacturersSubject.asObservable();
@@ -32,7 +32,6 @@ export class ProductService {
             this.filters = this.filters.filter(f => f !== filter)
         }
         this.filterSubject.next(this.filters);
-        //toDo add filter by manufacturer
     }
 
     resetFilter() {
@@ -163,7 +162,7 @@ export class ProductService {
                 return {
                     id: product._id,
                     ...product
-                }
+                } as Product
             })
         );
     }

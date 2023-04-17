@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Product } from "../models/product.model";
-import { BehaviorSubject, Subject, of } from "rxjs";
+import { BehaviorSubject, Subject, of, tap } from "rxjs";
 import { CartItem } from "../models/cartItem.model";
 import { PopupService } from "./popup.service";
 import { AuthService } from "./auth.service";
@@ -12,13 +12,13 @@ export class CartService {
 
     constructor(private popupService: PopupService,
         private authService: AuthService) { }
-    authUser = this.authService.authUser$.subscribe();
-    
+
     favouriteProductsSubject = new BehaviorSubject<Product[]>([]);
     favouriteProducts$ = this.favouriteProductsSubject.asObservable();
 
     favProduct: Product[] = []
     cartItems: CartItem[] = [];
+    authUser!: boolean;
 
 
     cartItemSubject = new BehaviorSubject<CartItem[]>([]);
@@ -26,19 +26,25 @@ export class CartService {
 
 
     addToCart(product: CartItem, action: 'add' | 'remove' | 'update') {
-        if (this.authUser) {
-            this.popupService.showNotification();
-            return;
-        }
-        if (action === 'add') {
-            this.cartItems.push(product);
-        } else if (action === 'remove') {
-            this.cartItems = this.cartItems.filter(c => c.product.id !== product.product.id)
-        } else {
-            this.cartItems.find(c => c.product.id === product.product.id)!.quantity = product.quantity;
-        }
-        this.cartItemSubject.next(this.cartItems);
-        this.saveCartInLocalStorage(this.cartItems)
+        this.authService.authUser$.pipe(
+            tap(user => {
+                console.log('authenticated user ? :' + user)
+                if (!user) {
+                    this.popupService.showNotification();
+                    return;
+                }
+                if (action === 'add') {
+                    this.cartItems.push(product);
+                } else if (action === 'remove') {
+                    this.cartItems = this.cartItems.filter(c => c.product.id !== product.product.id)
+                } else {
+                    this.cartItems.find(c => c.product.id === product.product.id)!.quantity = product.quantity;
+                }
+                this.cartItemSubject.next(this.cartItems);
+                this.saveCartInLocalStorage(this.cartItems)
+            })
+        ).subscribe()
+
     }
 
     getCartItems() {

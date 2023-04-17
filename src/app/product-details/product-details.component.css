@@ -1,6 +1,7 @@
 .details-section {
     padding: 20px 10%;
     display: flex;
+    min-height: 100vh;
 }
 
 .section {
@@ -101,7 +102,7 @@
         flex-direction: column;
     }
 
-    .price{
+    .price {
         text-align: center;
     }
 }

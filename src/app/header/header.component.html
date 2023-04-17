@@ -42,6 +42,9 @@
                 <span>{{ cartItems$ | async }}</span>
             </div>
             <a href=""><i class='bx bx-user'></i></a>
+            <a *ngIf="authUser$ | async" (click)="logout()" class="exit">
+                <i class='bx bx-exit'></i>
+            </a>
         </div>
         <div class="auth-buttons">
             <a [routerLink]="['/login']" *ngIf="!(authUser$ | async)">
@@ -49,9 +52,6 @@
             </a>
             <a [routerLink]="['/signup']" *ngIf="!(authUser$ | async)">
                 Signup
-            </a>
-            <a *ngIf="authUser$ | async" (click)="logout()">
-                logout
             </a>
         </div>
     </div>

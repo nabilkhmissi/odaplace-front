@@ -15,7 +15,7 @@ export class HeadphonesService {
     constructor(private http: HttpClient,
         private loadingService: LoadingService) { }
 
-    private baseUrl = environment.baseUrl;
+        private baseUrl = 'https://odaplace.onrender.com/api';
 
     private searchByManufacturersSubject = new BehaviorSubject<string | null>(null);
     searchByManufacturersSubject$ = this.searchByManufacturersSubject.asObservable();

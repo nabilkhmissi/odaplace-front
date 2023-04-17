@@ -19,6 +19,7 @@
     font-size: 30px;
     font-weight: 500;
     color: #333;
+    transition: .2s ease;
 }
 
 .search-bar {
@@ -50,6 +51,10 @@
 
 .nav-icon {
     display: flex;
+}
+
+.exit {
+    cursor: pointer;
 }
 
 .nav-icon>div {
@@ -134,6 +139,10 @@
 
 @media(max-width : 792px) {
 
+    .logo {
+        display: none;
+    }
+
     .category-btn {
         display: block;
     }
@@ -167,6 +176,7 @@
 .auth-buttons {
     flex-grow: 1;
     margin-left: 10px;
+    padding-right: 10px;
 }
 
 .auth-buttons a {

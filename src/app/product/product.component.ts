@@ -42,7 +42,6 @@ export class ProductComponent implements OnInit {
     this.inCart = !this.inCart;
   }
   goToDetails(event: any) {
-    console.log(this.product)
     event.preventDefault()
     if (this.product.category === 'smatphones') {
       this.router.navigate(['/products', this.product.id]);
