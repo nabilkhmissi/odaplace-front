@@ -1,0 +1,39 @@
+<div class="section">
+    <h3>Panier</h3>
+    <div class="items-container" *ngIf="cartItems$ | async as cartItems; else loggedOut">
+        <div class="cart-item-container">
+            <app-cart-item *ngFor="let item of cartItems.cart" [item]="item"></app-cart-item>
+        </div>
+        <div class="cart-item">
+            <div class="total">
+                <ul>
+                    <li>Subtotal</li>
+                    <li>$ {{ cartItems.total }}</li>
+                </ul>
+                <ul>
+                    <li>Tax</li>
+                    <li>25%</li>
+                </ul>
+                <ul>
+                    <li>Total</li>
+                    <li>$ {{ cartItems.total - cartItems.total*tax }}</li>
+                </ul>
+            </div>
+            <div class="checkout-btn">
+                <button>Checkout</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <ng-template #loggedOut>
+        <div class="empty-cart">
+            <p>Seems that you have nothing here...</p>
+            <button (click)='goToProducts()'>
+                <i class='bx bx-left-arrow-alt'></i> <span>Go shopping</span>
+            </button>
+        </div>
+    </ng-template>
+
+</div>

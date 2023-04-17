@@ -1,0 +1,13 @@
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.bookmarks-section{
+    padding: 10px 10%;
+}
+.section{
+    min-height: 100vh;
+}

@@ -1,0 +1,18 @@
+<div class="product-card">
+    <a (click)="goToDetails($event)" href="">
+        <img [src]="product.product_image" [alt]="product.title">
+    </a>
+
+    <h2 class="p-price">{{ product.price }}<span class="price-zeros">,000</span> TND </h2>
+    <h3 class="p-title">{{ product.title }}</h3>
+
+    <div class="product-data">
+        <div class="p-favoris" (click)="addToFavorite()">
+            <i class="{{isFavoris ? 'bx bxs-heart':'bx bx-heart'}}"></i>
+        </div>
+        <div class="cart" (click)="addToCart()">
+            <i class="bx bx-cart"></i>
+        </div>
+    </div>
+
+</div>

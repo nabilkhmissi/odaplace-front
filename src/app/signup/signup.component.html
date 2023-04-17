@@ -1,0 +1,22 @@
+<div class="section">
+    <div class="form">
+        <form [formGroup]="signupForm" (submit)="doSignup()">
+            <h4>Register</h4>
+            <div class="form-group">
+                <label class="form-label">Full name</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" formControlName="username">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="register-btn">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

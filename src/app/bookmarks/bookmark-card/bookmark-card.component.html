@@ -1,0 +1,18 @@
+<div class="bookmark-card">
+    <div class="img-wrapper">
+        <div class="button" (click)="removeFromBookmark()">
+            <i class="bx bx-trash"></i>
+        </div>
+        <img [src]="product.product_image" alt="product.title">
+    </div>
+    <a [routerLink]="['/products', product.id]">
+        <div class="product-details">
+            <h4>{{ product.price }},000 TND</h4>
+            <div class="description">
+                <p>
+                    {{product.description}}
+                </p>
+            </div>
+        </div>
+    </a>
+</div>

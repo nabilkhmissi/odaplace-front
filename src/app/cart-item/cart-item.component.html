@@ -1,0 +1,14 @@
+<div class="cart-item">
+    <div class="item-details">
+        <img class="cart-item-img" [src]="item.product.product_image" alt="">
+        <div>
+            {{ item.product.title }}
+        </div>
+    </div>
+    <div class="input-section">
+        <input class="qty" type="number" [formControl]="quantity">
+        <div class="subtotal">
+            ${{ subTotal }}
+        </div>
+    </div>
+</div>

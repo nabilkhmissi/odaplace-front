@@ -1,0 +1,59 @@
+<div class="header-bar">
+    <div class="logo">
+        <a [routerLink]="['']">OdaPlace</a>
+    </div>
+
+    <div class="category-list">
+        <div class="category-selector">
+            <a class="category-list-toggler">Categories</a>
+        </div>
+        <div class="category-btn">
+            <i class="bx bx-menu"></i>
+        </div>
+        <ul class="cat-items">
+            <li>
+                <a [routerLink]="['/products', 'smartphones']">Smartphones</a>
+            </li>
+            <li>
+                <a [routerLink]="['/products', 'headphones']">Headphones</a>
+            </li>
+            <li>
+                <a href="">Accessoires</a>
+            </li>
+            <li>
+                <a href="">Gadgets</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." [formControl]="searchInput" (keyup)='doSearch()'>
+        <label for=""><i class="bx bx-search"></i> </label>
+    </div>
+
+    <div class="nav-icon">
+        <div *ngIf="authUser$ | async">
+            <div class="cart">
+                <a [routerLink]="['bookmarks']"><i class='bx bx-heart'></i></a>
+                <span> {{ bookmarks$ | async }} </span>
+            </div>
+            <div class=" cart">
+                <a [routerLink]="['cart-items']"><i class='bx bx-shopping-bag'></i></a>
+                <span>{{ cartItems$ | async }}</span>
+            </div>
+            <a href=""><i class='bx bx-user'></i></a>
+        </div>
+        <div class="auth-buttons">
+            <a [routerLink]="['/login']" *ngIf="!(authUser$ | async)">
+                Login
+            </a>
+            <a [routerLink]="['/signup']" *ngIf="!(authUser$ | async)">
+                Signup
+            </a>
+            <a *ngIf="authUser$ | async" (click)="logout()">
+                logout
+            </a>
+        </div>
+    </div>
+
+</div>

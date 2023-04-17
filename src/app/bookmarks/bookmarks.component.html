@@ -1,0 +1,15 @@
+<div class="section">
+    <div class="bookmarks-section">
+        <h3>Your bookmarks</h3>
+        <div class="bookmarks">
+            <div class="products-grid" *ngIf="bookmarks$ | async as bookmarks; else emptyBookmarks">
+                <app-bookmark-card *ngFor="let product of bookmarks" [product]="product"></app-bookmark-card>
+            </div>
+            <ng-template #emptyBookmarks>
+                <div>
+                    <p>Seem you don't have a wishlist !</p>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

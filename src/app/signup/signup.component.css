@@ -1,0 +1,41 @@
+.section {
+    min-height: 100vh;
+    padding: 20px 10%;
+}
+
+.form {
+    width: 50%;
+    border: 1px solid rgb(183, 183, 183);
+    padding: 20px;
+    font-size: 18px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media(max-width: 792px) {
+    .form {
+        width: 100%;
+    }
+}
+
+.form-control {
+    border: 1px solid #333;
+    border-radius: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.register-btn {
+    padding: 10px 20px;
+    border: 1px solid #333;
+    background-color: transparent;
+}
+
+.register-btn:hover {
+    background-color: #333;
+    color: white;
+}

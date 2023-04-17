@@ -1,0 +1,20 @@
+<section class="products-section">
+    <div class="filter-section">
+        <app-headphones-filter-bar></app-headphones-filter-bar>
+    </div>
+    <div class="products-wrapper" *ngIf="products$ | async as products">
+        <app-filter-component></app-filter-component>
+        <div class="filter-result">
+            <h5> {{totalResults}} items found </h5>
+        </div>
+        <div class="products-grid">
+            <app-product *ngFor="let product of products.data" [product]="product"> </app-product>
+        </div>
+        <div class="pagination-section">
+            <button class="pagination-item" *ngFor="let page of [].constructor(products.totalPages);let i = index"
+                (click)='selectPage(i)'
+                [ngStyle]="currentPage == i ? {'background-color': 'orangered'} : {'background-color': 'rgb(239, 239, 239)'}">{{
+                i+1 }}</button>
+        </div>
+    </div>
+</section>

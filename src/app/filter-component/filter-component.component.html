@@ -1,0 +1,13 @@
+<div class="filter-pills-section" *ngIf="filter$ | async as filter">
+    <h3>Filter :</h3>
+    <div class="filter-container">
+        <div class="filter-pills">
+            <div class="filter-pill" *ngFor='let f of filter'>
+                <app-filter-item [filter]="f"></app-filter-item>
+            </div>
+        </div>
+        <div class="reset-filter">
+            <button (click)="resetFilters()">Reset filter</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.section {
+    padding: 20px;
+    background-color: orangered;
+    color: white;
+    text-align: center;
+}
+
+.section div {
+    display: inline-block;
+}
+.section p{
+    margin: 0;
+}

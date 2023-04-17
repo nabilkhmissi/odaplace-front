@@ -1,0 +1,14 @@
+.section {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #181818;
+    color: white;
+    display: flex;
+    gap: 20px;
+}
+
+@media(max-width : 792px) {
+    .section {
+        flex-direction: column;
+    }
+}

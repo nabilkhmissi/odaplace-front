@@ -1,0 +1,133 @@
+.products-section {
+    padding: 20px 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    gap: 10px;
+}
+
+.product-card {
+    position: relative;
+    transition: .2s ease;
+}
+
+.products-grid {
+    /*  padding: 0 20px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.product-card img {
+    width: 100%;
+}
+
+.product-card:hover img {
+    transform: scale(0.95);
+    transition: all .2s ease;
+}
+
+.p-price {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.p-title {
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+    color: #333;
+}
+
+.p-rating {
+    padding: 5px 0;
+}
+
+.p-rating i {
+    font-size: 20px;
+    color: #333;
+}
+
+.p-favoris i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 22px;
+    padding: 10px;
+    background-color: #00000068;
+    border-radius: 50px;
+    color: white;
+    transition: .1s ease;
+}
+
+.p-favoris i:hover {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.p-title {
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.filter-btn {
+    display: none;
+    float: left;
+}
+
+.filter-btn i {
+    font-size: 25px;
+    background-color: orangered;
+    color: white;
+    padding: 10px;
+}
+
+.products-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination-section {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagination-section button {
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: orangered;
+    border: none;
+}
+
+.filter-result {
+    padding: 5px 0;
+}
+
+.buttons {
+    display: flex;
+}
+
+.pagination-section button:hover {
+    background-color: #dbdbdb;
+}
+
+@media(max-width : 792px) {
+    .products-section {
+        flex-direction: column;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}

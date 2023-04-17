@@ -1,0 +1,29 @@
+<div class="section">
+    <div class="content">
+        <div class="slider">
+            <!-- <img src="../../assets/slide2.jpg" alt=""> -->
+        </div>
+        <div class="simular-products">
+            <h3>Smartphones</h3>
+            <div class="simular-products-container" *ngIf="simularProducts$ | async as simularProducts">
+                <app-product *ngFor="let product of simularProducts" [product]="product"></app-product>
+            </div>
+            <div class="bottom">
+                <button>
+                    Show more
+                </button>
+            </div>
+        </div>
+        <div class="simular-products">
+            <h3>Headphones</h3>
+            <div class="simular-products-container" *ngIf="simularHeadphones$ | async as simularProducts">
+                <app-product *ngFor="let product of simularProducts" [product]="product"></app-product>
+            </div>
+            <div class="bottom">
+                <button>
+                    Show more
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

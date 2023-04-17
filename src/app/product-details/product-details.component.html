@@ -1,0 +1,51 @@
+<div class="details-section">
+    <div class="product_preview">
+        <img [src]="product?.product_image" alt="product.title">
+    </div>
+    <div class="product_infos">
+        <div class="main">
+            <h1 class="product_title">{{ product?.title }}</h1>
+            <hr>
+            <div class="manufacturer">
+                <h3>Marque : {{ product?.manufacturer }}</h3>
+            </div>
+            <div class="description">
+                <h4>Description</h4>
+                <p>{{ product?.description }}</p>
+            </div>
+            <div class="price">
+                <span>{{ product?.price }},000 TND</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="quantity">
+                <h4>Quantité :</h4>
+            </div>
+            <div class="input-field">
+                <div class="input-div">
+                    <input type="number" min="0" [(ngModel)]="qty">
+                </div>
+                <div class="add-button">
+                    <button (click)="addToCart()">
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <h3>Commentaires</h3>
+    <div class="comments-container">
+        <p>Aucun commentaire n'est trouvé !</p>
+    </div>
+</div>
+
+<div class="section">
+    <div class="simular-products">
+        <h3>Produits simulaires</h3>
+        <div class="simular-products-container" *ngIf="simularProducts$ | async as simularProducts">
+            <app-product *ngFor="let product of simularProducts" [product]="product"></app-product>
+        </div>
+    </div>
+</div>

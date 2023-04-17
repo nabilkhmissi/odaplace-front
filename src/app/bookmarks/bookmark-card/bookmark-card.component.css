@@ -1,0 +1,54 @@
+.bookmark-card img {
+    width: 100%;
+}
+
+.description p {
+    font-size: 18px;
+    font-weight: 400;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+
+.product-details {
+    text-align: center;
+    padding: 5px;
+}
+
+.bookmark-card a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.button i {
+    padding: 15px;
+    background-color: orangered;
+    opacity: .5;
+    color: white;
+    font-size: 25px;
+    border-radius: 50px;
+}
+
+.button:hover i {
+    opacity: 1;
+}
+
+.bookmark-card {
+    border: 1px solid rgb(230, 230, 230);
+}
