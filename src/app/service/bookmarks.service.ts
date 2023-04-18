@@ -21,7 +21,7 @@ export class BookmarkService {
         this.authService.authUser$.pipe(
             tap(user => {
                 if (!user) {
-                    this.popupService.showNotification();
+                    this.popupService.showNotification('you have to sign in first to add items to your wishlist');
                     return;
                 }
                 let existBookmark = this.booksmarks.find(p => p.id === product.id);

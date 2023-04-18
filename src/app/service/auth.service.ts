@@ -5,6 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { Router } from "@angular/router";
 import { LoadingService } from "./loading.service";
+import { PopupService } from "./popup.service";
 
 @Injectable({
     providedIn: 'root'
@@ -13,7 +14,8 @@ export class AuthService {
 
     constructor(private httpClient: HttpClient,
         private router: Router,
-        private loadingService: LoadingService) { }
+        private loadingService: LoadingService,
+        private popupService: PopupService) { }
 
     private authUser = new BehaviorSubject<boolean>(false);
     authUser$ = this.authUser.asObservable();
@@ -45,10 +47,18 @@ export class AuthService {
                 };
                 this.loadingService.hideLoading();
                 this.router.navigate([''])
+            }),
+            catchError(error => {
+                this.loadingService.hideLoading();
+                this.popupService.showNotification(error.error.message)
+                return of();
             })
         )
     }
 
+    handleError(error: any) {
+        this.popupService.showNotification(error);
+    }
     saveLoginToLocalStorage(user: any) {
         localStorage.setItem('odaplaceLogin', JSON.stringify(user))
     }

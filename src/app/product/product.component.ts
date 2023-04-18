@@ -29,7 +29,7 @@ export class ProductComponent implements OnInit {
 
   addToFavorite() {
     this.bookmarkService.addBookmark(this.product);
-    this.isFavoris = !this.isFavoris
+    this.isFavoris = !this.isFavoris;
   }
   authUSer = this.authService.authUser$.subscribe();
   addToCart() {

@@ -25,6 +25,7 @@ import { HeadphonesDetailsComponent } from './headphones-details/headphones-deta
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { LoadingComponent } from './loading/loading.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { LoadingComponent } from './loading/loading.component';
     HeadphonesDetailsComponent,
     SignupComponent,
     LoginComponent,
-    LoadingComponent
+    LoadingComponent,
+    PopupComponent
   ],
   imports: [
     AppRoutingModule,

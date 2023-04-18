@@ -28,9 +28,8 @@ export class CartService {
     addToCart(product: CartItem, action: 'add' | 'remove' | 'update') {
         this.authService.authUser$.pipe(
             tap(user => {
-                console.log('authenticated user ? :' + user)
                 if (!user) {
-                    this.popupService.showNotification();
+                    this.popupService.showNotification('you have to sign in first to add items to your cart');
                     return;
                 }
                 if (action === 'add') {

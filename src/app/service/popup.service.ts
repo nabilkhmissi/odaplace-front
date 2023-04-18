@@ -6,15 +6,15 @@ import { BehaviorSubject } from "rxjs";
 })
 export class PopupService {
 
-    private notificationSubject = new BehaviorSubject<boolean>(false)
+    private notificationSubject = new BehaviorSubject<string | null>(null)
     notificationSubject$ = this.notificationSubject.asObservable();
 
-    showNotification() {
-        this.notificationSubject.next(true)
+    showNotification(message: string) {
+        this.notificationSubject.next(message)
     }
 
     hideNotification() {
-        this.notificationSubject.next(false)
+        this.notificationSubject.next(null)
     }
 
 }

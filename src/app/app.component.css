@@ -5,31 +5,3 @@
     padding: 0;
     width: 100%;
 }
-
-.alert-popup {
-    position: fixed;
-    z-index: 99999;
-    background-color: rgba(0, 0, 0, 0.318);
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    display: grid;
-    place-items: center;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 30px;
-    font-size: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.popup-content button {
-    border: 2px solid rgb(207, 207, 207);
-    background-color: transparent;
-    padding: 10px 20px;
-    max-width: 90px;
-}

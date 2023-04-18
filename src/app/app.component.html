@@ -1,11 +1,4 @@
-<div class="alert-popup" *ngIf=" popup$ | async">
-    <div class="popup-content">
-        <p>You have to sign in first to save items in you cart/whishlist</p>
-        <button (click)='hidePopup()'>
-            Ok
-        </button>
-    </div>
-</div>
+<app-popup *ngIf="popup$ | async"></app-popup>
 <app-header></app-header>
 <div class="container">
     <app-loading *ngIf="loading$ | async"></app-loading>

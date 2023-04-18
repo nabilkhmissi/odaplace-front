@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     private authService: AuthService,
     private loadingService: LoadingService) { }
 
-  popup$ = this.popupService.notificationSubject$;
+  popup$ = this.popupService.notificationSubject$.pipe(tap(console.log));
 
   loading$ = this.loadingService.loadingSubject$;
 
@@ -28,8 +28,5 @@ export class AppComponent implements OnInit {
     this.authService.getAuthUSerFromLocalstorage();
     this.cartService.getCartItemsFronLocalStorage();
     this.bookmarkService.getBookmarksFronLocalStorage();
-  }
-  hidePopup() {
-    this.popupService.hideNotification();
   }
 }
