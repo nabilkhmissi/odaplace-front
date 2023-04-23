@@ -23,13 +23,17 @@ export class ProductDetailsComponent implements OnInit {
   cartItem!: CartItem;
   inCart: boolean = false;
   qty = 0;
+  id!: string;
 
-  simularProducts$ = this.productsService.simularProducts$
+  simularProducts$ = this.productsService.simularProducts$.pipe(
+    map(products => products.filter(p => p.id !== this.id))
+  )
 
   ngOnInit(): void {
     this.activatedRoute.data.pipe(
       map((data: any) => data.product),
       tap(product => {
+        this.id = product.id;
         let cartItem = this.cartService.cartItems.find(item => item.product.id === product.id);
         if (cartItem) {
           this.qty = cartItem.quantity;

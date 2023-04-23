@@ -1,5 +1,4 @@
 .products-filter {
-    position: relative;
     min-width: 250px;
     border: 1px solid rgb(208, 208, 208);
 }
@@ -67,16 +66,25 @@
 
 @media(max-width : 792px) {
 
+    .products-filter {
+        position: relative;
+        border: none;
+    }
+
     .filter-btn {
         top: 0;
         display: block;
+        z-index: 101;
     }
 
     .filter-items-wrapper {
         position: absolute;
         top: 100%;
         background-color: white;
-        z-index: 1;
-        width: 100%;
+        z-index: 101;
+        width: 70%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.223);
+        display: none;
     }
+
 }

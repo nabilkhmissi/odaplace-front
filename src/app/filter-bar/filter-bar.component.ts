@@ -14,11 +14,12 @@ export class FilterBarComponent implements OnInit {
   manufacturers: any[] = [];
   max_price = 10000;
   min_price = 0;
-  showFilters = true;
-
+  filterClicked = false;
+  filter!: HTMLElement;
 
 
   ngOnInit(): void {
+    this.filter = document.querySelector('.filter-items-wrapper') as HTMLElement
   }
   selectManufacturer(event: any) {
     let manufacturer = event.target.value;
@@ -45,7 +46,13 @@ export class FilterBarComponent implements OnInit {
   }
 
   doShowFilter() {
-    this.showFilters = !this.showFilters;
+    if (!this.filterClicked) {
+      this.filter.style.display = 'block'
+    } else {
+      this.filter.style.display = 'none'
+    }
+    this.filterClicked = !this.filterClicked
+
   }
 
 }

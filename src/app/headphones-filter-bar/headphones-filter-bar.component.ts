@@ -15,11 +15,12 @@ export class HeadphonesFilterBarComponent implements OnInit {
   manufacturers: any[] = [];
   max_price = 10000;
   min_price = 0;
-  showFilters = true;
-
+  filterClicked = true;
+  filter!: HTMLElement;
 
 
   ngOnInit(): void {
+    this.filter = document.querySelector('.filter-items-wrapper') as HTMLElement
   }
   selectManufacturer(event: any) {
     let manufacturer = event.target.value;
@@ -44,9 +45,14 @@ export class HeadphonesFilterBarComponent implements OnInit {
     this.productService.getFilters('min price: ' + this.min_price);
     this.productService.filterByMinPrice(this.min_price);
   }
-
   doShowFilter() {
-    this.showFilters = !this.showFilters;
+    if (!this.filterClicked) {
+      this.filter.style.display = 'block'
+    } else {
+      this.filter.style.display = 'none'
+    }
+    this.filterClicked = !this.filterClicked
+
   }
 
 }

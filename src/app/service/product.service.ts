@@ -15,7 +15,8 @@ export class ProductService {
     constructor(private http: HttpClient,
         private loadingService: LoadingService) { }
 
-    private baseUrl = 'https://odaplace.onrender.com/api';
+    // private baseUrl = 'https://odaplace.onrender.com/api';
+    private baseUrl = 'http://localhost:3000/api';
 
     private searchByManufacturersSubject = new BehaviorSubject<string | null>(null);
     searchByManufacturersSubject$ = this.searchByManufacturersSubject.asObservable();

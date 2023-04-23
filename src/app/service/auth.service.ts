@@ -21,7 +21,8 @@ export class AuthService {
     authUser$ = this.authUser.asObservable();
 
 
-    private baseUrl = 'https://odaplace.onrender.com/api';
+    // private baseUrl = 'https://odaplace.onrender.com/api';
+    private baseUrl = 'http://localhost:3000/api';
 
     setAuthenticatedUser(user: any) {
         this.authUser.next(user)

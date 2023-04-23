@@ -1,6 +1,7 @@
 .section {
     min-height: 100vh;
-    padding: 10px 10%;
+    padding: 20px 10%;
+    margin-bottom: 10px;
 }
 
 .slider {
@@ -19,20 +20,30 @@
 
 .bottom {
     padding: 15px;
-    border-bottom: 1px solid rgb(198, 198, 198);
     margin-bottom: 10px;
     text-align: center;
 }
 
 .bottom button {
-    padding: 10px 20px;
-    background-color: white;
+    padding: 5px 20px;
+    background-color: transparent;
     color: orangered;
     border: 2px solid orangered;
     font-size: 23px;
 }
 
+.bottom button i {
+    vertical-align: middle;
+}
+
+
 .bottom button:hover {
     background-color: orangered;
     color: white;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
