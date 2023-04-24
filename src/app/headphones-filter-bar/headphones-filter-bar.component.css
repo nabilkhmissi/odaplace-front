@@ -1,12 +1,13 @@
 .products-filter {
     min-width: 250px;
-    border: 1px solid rgb(208, 208, 208);
+    background-color: white;
 }
 
 .filter-item h4 {
     font-size: 20px;
     font-weight: 500;
 }
+
 
 .filter-item {
     padding: 10px 20px;

@@ -1,6 +1,5 @@
 .products-section {
     padding: 20px 5%;
-    background-color: rgb(255, 255, 255);
     display: flex;
     gap: 10px;
     min-height: 100vh;
@@ -14,7 +13,7 @@
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, auto));
-    grid-gap: 1.5rem;
+    grid-gap: 1rem;
     width: 100%;
     margin-bottom: 10px;
 }
@@ -111,7 +110,13 @@
 }
 
 .filter-result {
-    padding: 5px 0;
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.filter-result h5 {
+    margin: 0;
 }
 
 .pagination-section button:hover {

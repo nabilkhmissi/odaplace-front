@@ -3,9 +3,9 @@
         <app-headphones-filter-bar></app-headphones-filter-bar>
     </div>
     <div class="products-wrapper" *ngIf="products$ | async as products">
-        <app-filter-component></app-filter-component>
         <div class="filter-result">
             <h5> {{totalResults}} items found </h5>
+            <app-filter-component></app-filter-component>
         </div>
         <div class="products-grid">
             <app-product *ngFor="let product of products.data" [product]="product"> </app-product>
